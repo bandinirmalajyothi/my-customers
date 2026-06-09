@@ -71,8 +71,11 @@ function createCustomerCard(customer) {
   
   card.innerHTML = `
     ${photoHTML}
-    <h3 class="font-bold text-gray-900 mb-2 cursor-pointer hover:text-blue-600" onclick="viewCustomer('${customer.id}')">${customer.name}</h3>
-    <p class="text-sm text-gray-600">Balance: $${parseFloat(customer.balance || 0).toFixed(2)}</p>
+    <h3 class="font-bold text-gray-900 mb-2">${customer.name}</h3>
+    <p class="text-sm text-gray-600 mb-3">Balance: $${parseFloat(customer.balance || 0).toFixed(2)}</p>
+    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm px-3 py-1 rounded transition" onclick="viewCustomer('${customer.id}')">
+      Edit Details
+    </button>
   `;
   
   card.addEventListener('dragstart', handleDragStart);
