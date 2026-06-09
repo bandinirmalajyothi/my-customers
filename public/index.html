@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Customers - CRM Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="text-2xl font-bold text-blue-600">My Customers</a>
+        <button id="addCustomerBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition">
+          + Add Customer
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Customer Pipeline</h1>
+    
+    <!-- Kanban Board -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Planning Column -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Planning</h2>
+        <div id="planning-column" class="kanban-column bg-gray-100 rounded p-4 min-h-96 space-y-3" data-status="Planning">
+          <!-- Cards will be added here by JavaScript -->
+        </div>
+      </div>
+
+      <!-- In-Progress Column -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">In-progress</h2>
+        <div id="in-progress-column" class="kanban-column bg-gray-100 rounded p-4 min-h-96 space-y-3" data-status="In-progress">
+          <!-- Cards will be added here by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Review Column -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-bold text-gray-900 mb-4">Review</h2>
+        <div id="review-column" class="kanban-column bg-gray-100 rounded p-4 min-h-96 space-y-3" data-status="Review">
+          <!-- Cards will be added here by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div id="loadingIndicator" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg p-8">
+      <div class="text-center">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <p class="mt-4 text-gray-700">Loading customers...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div id="notification" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hidden z-50">
+    <!-- Message will be inserted here -->
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
